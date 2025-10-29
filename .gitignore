@@ -137,3 +137,41 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Supabase local files
+supabase/.branches
+supabase/.temp
+
+# Prisma local dev database (if using SQLite for dev)
+prisma/dev.db
+prisma/migrations/*/migration.sql
+
+# Vercel deployment folder
+.vercel/
+
+# Logs folder for custom logging
+logs/
+*.log
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Optional coverage and test reports
+coverage/
+.nyc_output/
+
+# Next.js build output
+.next/
+out/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
