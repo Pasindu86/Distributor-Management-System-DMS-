@@ -13,19 +13,19 @@ export default function SummaryCards({ products }: SummaryCardsProps) {
   const totalItems = products.reduce((sum, p) => sum + p.item_quantity, 0);
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
         <div>
-          <p className="text-sm font-medium text-gray-600 mb-1">Total Products</p>
-          <p className="text-3xl font-bold text-gray-900">{products.length}</p>
+          <p className="text-xs sm:text-sm font-medium text-gray-600 mb-1">Total Products</p>
+          <p className="text-2xl sm:text-3xl font-bold text-gray-900">{products.length}</p>
         </div>
         <div>
-          <p className="text-sm font-medium text-gray-600 mb-1">Total Items</p>
-          <p className="text-3xl font-bold text-gray-900">{totalItems}</p>
+          <p className="text-xs sm:text-sm font-medium text-gray-600 mb-1">Total Items</p>
+          <p className="text-2xl sm:text-3xl font-bold text-gray-900">{totalItems}</p>
         </div>
         <div>
-          <p className="text-sm font-medium text-gray-600 mb-1">Total Warehouse Value</p>
-          <p className="text-3xl font-bold text-blue-600">
+          <p className="text-xs sm:text-sm font-medium text-gray-600 mb-1">Total Warehouse Value</p>
+          <p className="text-2xl sm:text-3xl font-bold text-blue-600">
             Rs. {totalWarehouseValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
           </p>
         </div>
