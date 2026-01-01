@@ -23,3 +23,11 @@ export type Restock = {
     title: string;
   };
 };
+
+export type DailyStockMovement = {
+  d_id: number;
+  p_id: number;
+  movement_date: string;
+  issued_qty: number;
+  returned_qty: number;
+};

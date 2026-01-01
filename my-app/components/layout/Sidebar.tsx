@@ -16,9 +16,9 @@ import { useState } from 'react';
 const navigation = [
   { name: 'Dashboard', href: '/', icon: LayoutDashboard },
   { name: 'Restock', href: '/restock', icon: PackagePlus },
-  { name: 'Daily Issue', href: '/daily issue', icon: TrendingUp },
-  { name: 'Daily Returns', href: '/daily returns', icon: TrendingDown },
-  { name: 'Gas Out & Expired', href: '/gas out & expired', icon: Package },
+  { name: 'Daily Issue', href: '/daily-issue', icon: TrendingUp },
+  { name: 'Daily Returns', href: '/daily-returns', icon: TrendingDown },
+  { name: 'Gas Out & Expired', href: '/gas-out-expired', icon: Package },
 ];
 
 export default function Sidebar() {

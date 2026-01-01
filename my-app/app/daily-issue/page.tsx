@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { supabase, Product, DailyStockMovement } from '@/lib/supabase';
+import { supabase, Product } from '@/lib/supabase';
 
 type ProductWithIssue = Product & {
   issued_qty?: number;
@@ -42,8 +42,8 @@ export default function DailyIssuePage() {
       }
 
       // Combine product data with existing issue data
-      const combinedData = (productsData || []).map((product: Product) => {
-        const movement = movementData?.find((m: DailyStockMovement) => m.p_id === product.p_id);
+      const combinedData = (productsData || []).map((product) => {
+        const movement = movementData?.find((m) => m.p_id === product.p_id);
         return {
           ...product,
           issued_qty: movement?.issued_qty || 0,
@@ -55,7 +55,7 @@ export default function DailyIssuePage() {
 
       // Initialize issue data state
       const initialIssueData: { [key: number]: number } = {};
-      combinedData.forEach((product: ProductWithIssue) => {
+      combinedData.forEach((product) => {
         if (product.issued_qty) {
           initialIssueData[product.p_id] = product.issued_qty;
         }
