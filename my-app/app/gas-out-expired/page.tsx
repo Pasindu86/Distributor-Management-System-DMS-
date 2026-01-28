@@ -43,7 +43,7 @@ export default function GasOutExpiredPage() {
     } finally {
       setLoading(false);
     }
-  }, [selectedDate]);
+  }, []);
 
   useEffect(() => {
     fetchData();
