@@ -9,9 +9,11 @@ import {
   TrendingDown,
   PackagePlus,
   Menu,
-  X
+  X,
+  LogOut
 } from 'lucide-react';
 import { useState } from 'react';
+import { useAuth } from '@/contexts/AuthContext';
 
 const navigation = [
   { name: 'Dashboard', href: '/', icon: LayoutDashboard },
@@ -24,6 +26,11 @@ const navigation = [
 export default function Sidebar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    await signOut();
+  };
 
   return (
     <>
@@ -76,11 +83,20 @@ export default function Sidebar() {
             })}
           </nav>
 
-          {/* Footer */}
+          {/* User & Logout */}
           <div className="p-4 border-t border-gray-200">
-            <p className="text-xs text-gray-500 text-center">
-              © 2025 DMS System
-            </p>
+            {user && (
+              <div className="mb-3">
+                <p className="text-xs text-gray-500 truncate">{user.email}</p>
+              </div>
+            )}
+            <button
+              onClick={handleSignOut}
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-red-600 hover:bg-red-50 transition-colors duration-200"
+            >
+              <LogOut size={20} />
+              <span>Sign Out</span>
+            </button>
           </div>
         </div>
       </div>
